@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function check_for_request_done() { if (xhr.readyState == 4) {
+	clearInterval(timer);
+	do_something_with_result(xhr);
+	} }
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "/#", true);
+xhr.send();
+var timer = setInterval(check_for_request_done, 100);
+</script>
+ 
+</body>
+</html>

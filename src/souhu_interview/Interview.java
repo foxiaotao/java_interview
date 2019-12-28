@@ -3,7 +3,7 @@ package souhu_interview;
 
 import org.junit.Test;
 
-public class interview {
+public class Interview {
 
 	public static void main(String[] args) {
 		System.out.println(test());
@@ -31,7 +31,7 @@ public class interview {
 	
 	@Test
 	public void base1_1(){
-		String s = "interview";
+		String s = "Interview";
 		String r = s.replace("e", "a");
 		String ra = s.replaceAll("e", "a");
 		System.out.println(s);

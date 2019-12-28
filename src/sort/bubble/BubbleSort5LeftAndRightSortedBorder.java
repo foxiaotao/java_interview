@@ -31,11 +31,11 @@ public class BubbleSort5LeftAndRightSortedBorder {
     }
     @Test
     public void sort43() {
-        int []arr = {2, 5, 6, 22, 23, 43, 50, 65, 78, 88, 1};
-        System.out.println("原始数组:" + Arrays.toString(arr));
+        int []array = {5, 8, 6, 3, 9, 2, 1, 7};
+        System.out.println("原始数组:" + Arrays.toString(array));
         System.out.println("第四版 冒泡排序(考虑双向边界)");
-        sortArrayWithDoublePartyArrayIsSorted(arr);
-        System.out.println("排序后数组" + Arrays.toString(arr));
+        sortArrayWithDoublePartyArrayIsSorted(array);
+        System.out.println("排序后数组" + Arrays.toString(array));
     }
 
     /**

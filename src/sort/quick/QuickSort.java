@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int []array = {5, 8, 6, 3, 9, 2, 1, 7};
+        int []array = {43, 22, 49, 6, 5, 2, 50, 65};
         System.out.println("原数组:" + Arrays.toString(array));
         quickSort(array, 0, array.length - 1);
 

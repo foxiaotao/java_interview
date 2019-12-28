@@ -9,27 +9,28 @@ import java.util.Arrays;
  */
 public class QuickSortTest {
 
+    private static int swapTimes = 0;
+
     public static void main(String[] args) {
-        int []array = {5, 8, 6, 3, 9, 2, 1, 7};
+        int []array = {43, 22, 49, 6, 5, 2, 50, 65};
         System.out.println("原数组:" + Arrays.toString(array));
 
-        int []swapTimes = {0};
-        quickSort(array, 0, array.length - 1, swapTimes);
+        quickSort(array, 0, array.length - 1);
 
         System.out.println("排序数组:" + Arrays.toString(array));
-        System.out.println("交换次数=" + swapTimes[0]);
+        System.out.println("交换次数=" + swapTimes);
     }
 
-    private static void quickSort(int[] array, int low, int high, int[] swapTimes) {
+    private static void quickSort(int[] array, int low, int high) {
         if (low < high) {
-            int index = getEqualIndex(array, low, high, swapTimes);
-            quickSort(array, low, index - 1, swapTimes);
-            quickSort(array, index + 1, high, swapTimes);
+            int index = getEqualIndex(array, low, high);
+            quickSort(array, low, index - 1);
+            quickSort(array, index + 1, high);
         }
 
     }
 
-    private static int getEqualIndex(int[] array, int low, int high, int[] swapTimes) {
+    private static int getEqualIndex(int[] array, int low, int high) {
         int temp = array[low];
         while (low < high) {
             // 后往前
@@ -38,12 +39,12 @@ public class QuickSortTest {
             }
             // 交换(temp 比最后大)
             array[low] = array[high];
-            swapTimes[0]++;
+            swapTimes++;
             while (low < high && temp >= array[low]) {
                 low ++;
             }
             array[high] = array[low];
-            swapTimes[0]++;
+            swapTimes++;
         }
         array[high] = temp;
         return high;

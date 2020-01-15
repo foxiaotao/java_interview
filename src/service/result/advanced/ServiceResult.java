@@ -1,9 +1,9 @@
-package service.result;
+package service.result.advanced;
 
 import java.io.Serializable;
 
 /**
- * @description: serivce之间的结果返回
+ * @description: serivce之间的结果返回（复杂的）
  * @author:tao
  * @create: 2020-01-09 11:45
  */

@@ -36,29 +36,36 @@ public class LinkedNodeTest {
         return node;
     }
 
+    /**
+     * 循环 的方式反转
+     * @param head
+     * @return
+     */
     public static Node reverse2(Node head) {
-        if (head == null || head.next == null) {
-            return head;
+        // 原 前置node
+        Node preNode = null;
+        // 原来的next
+        Node nextNode = null;
+        // 1-2-3-4-5
+        while (head != null) {
+            nextNode = head.next;
+            head.next = preNode;
+            // 完成本轮交换
+
+            // 赋值 下轮preNode
+            preNode = head;
+
+            // 循环到下一个
+            head = nextNode;
         }
-        // 记录当前node
-        Node next = head.next;
-
-        // 获取新的，新的节点
-        Node last = reverse2(head.next);
-
-        // 要断掉当前的next，把head.next.next 指向head
-        next.next = head;
-        head.next = null;
-
-        // 返回 原来最后的 后一个node
-        return last;
+        return preNode;
 
     }
 
 
 
     /**
-     * 反转链表
+     * 反转链表 递归
      * @param head
      * @return
      */
